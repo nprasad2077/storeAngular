@@ -28,6 +28,10 @@ export class HeaderComponent  {
 
   }
 
+  onClearCart(){
+    this.cartService.clearCart()
+  }
+
   
 
 }
