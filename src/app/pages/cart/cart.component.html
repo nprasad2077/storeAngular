@@ -28,7 +28,7 @@
                     <mat-icon>remove</mat-icon>
                 </button>
                 <span class="truncate max-w-xs">{{element.quantity}}</span>
-                <button mat-icon-button>
+                <button mat-icon-button (click)="onAddQuantity(element)">
                     <mat-icon>add</mat-icon>
                 </button>
             </td>         
