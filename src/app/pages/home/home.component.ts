@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   category: string | undefined;
   products: Array<Product> | undefined;
   sort = 'desc'
-  count = 12
+  count = '12'
   productsSubscription: Subscription | undefined;
 
   constructor(private cartService: CartService, private storeService: StoreService) { }
@@ -48,6 +48,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       quantity: 1,
       id: product.id
     })
+  }
+
+  onItemsCountChange(newCount: number): void {
+    this.count = newCount.toString();
+    this.getProducts();
+  }
+
+  onSortChange(newSort: string): void {
+    this.sort = newSort;
+    this.getProducts();
   }
 
   ngOnDestroy(): void {  // Prevent memory leaks when going from cart to shopping page back and forth. 
